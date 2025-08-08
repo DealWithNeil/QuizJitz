@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Results - QuizJitz</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="container">
+    <h2>Your Score</h2>
+    <p id="score-text">Loading score...</p>
+
+    <div class="results-actions">
+      <button onclick="location.href='index.html'" class="category-btn">🏠 Back to Categories</button>
+      <button onclick="location.href='quiz.html'" class="category-btn">🔁 Retry Quiz</button>
+    </div>
+  </div>
+
+  <script>
+    const score = localStorage.getItem("finalScore") || 0;
+    const category = localStorage.getItem("selectedCategory") || "unknown";
+    document.getElementById("score-text").textContent = `You scored ${score} / 10 in ${category.toUpperCase()}!`;
+  </script>
+</body>
+</html>
